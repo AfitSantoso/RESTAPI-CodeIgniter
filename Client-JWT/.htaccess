@@ -1,0 +1,12 @@
+# block folder 
+Options -Indexes
+
+# direct 403
+ErrorDocument 403 "http://localhost/PWBS-GAB2/Client/index.php/E403"
+
+# menghilangkan index.php
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+
